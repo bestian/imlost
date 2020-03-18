@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <h3 class="no-print">老少兩用走失聯絡卡，可友善列印</h3>
+    <h3 class="no-print">老少兩用迷路聯絡卡，可友善列印</h3>
     <div id ="show" class = "print-only">
-      <h1>我走失了</h1>
+      <h1>我迷路了</h1>
       <h3>請幫忙聯絡我的主要照顧者</h3>
       <div>我叫：{{myName || '[未命名]'}}</div>
       <div v-show = "isChild">子女手機：
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div id ="preview" class = "no-print" v-show="preview">
-      <h1>我走失了</h1>
+      <h1>我迷路了</h1>
       <h3>請幫忙聯絡我的主要照顧者</h3>
       <div>我叫：{{myName || '[未命名]'}}</div>
       <div v-show = "isChild">子女手機：
