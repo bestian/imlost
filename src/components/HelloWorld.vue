@@ -45,6 +45,9 @@
       <input v-show="isBaba" class = "block" type="text" name="babaphone" v-model="babaPhone" placeholder="請輸入爸爸的手機號碼" />
     </div>
     <a class = "button3" onclick="window.print()">友善列印</a>
+    <footer id="foot" class="no-print">
+      <a href="http://www.github.com/bestian/imlost" target="_blank">原始碼 on Github</a>
+    </footer>
   </div>
 </template>
 
@@ -71,6 +74,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#foot {
+  position: fixed;
+  bottom: 0;
+  right:0 ;
+  padding: 1em;
+}
+
+#foot a {
+  padding: .2em .4em;
+  text-decoration: none;
+  background-color: #ccccff;
+  border-radius: 5px;
+}
 
 .block {
   display: block;
