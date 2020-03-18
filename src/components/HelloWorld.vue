@@ -87,6 +87,7 @@ input {
   border: 2px solid green;
   border-radius: 5px;
   margin: 1em 0;
+  padding: .2em;
 }
 
 @media print {
@@ -125,7 +126,7 @@ a.button3:hover {
   width: 62%;
   margin: 0 auto;
   padding: 1em;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 </style>
