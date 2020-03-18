@@ -1,13 +1,13 @@
 <template>
   <div class="hello">
-    <h3 class="no-print">走失聯絡卡，可友善列印</h3>
+    <h3 class="no-print">老少兩用走失聯絡卡，可友善列印</h3>
     <div id ="show" class = "print-only">
       <h1>我走失了</h1>
       <h3>請幫忙聯絡我的主要照顧者</h3>
       <div>我叫：{{myName}}</div>
       <div v-show = "isChild">子女手機：
         <span v-show="showNumber">{{childPhone}}</span>
-        <img v-show="showQR":src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
       </div>
 
       <div v-show="isCare">看顧手機：
@@ -17,12 +17,12 @@
 
       <div v-show = "isMama">媽媽手機：
         <span v-show="showNumber">{{mamaPhone}}</span>
-        <img v-show="showQR":src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + mamaPhone + '&choe=UTF-8'"/>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + mamaPhone + '&choe=UTF-8'"/>
       </div>
 
       <div v-show = "isBaba">爸爸手機：
         <span v-show="showNumber">{{babaPhone}}</span>
-        <img v-show="showQR":src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + babaPhone + '&choe=UTF-8'"/>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + babaPhone + '&choe=UTF-8'"/>
       </div>
     </div>
     <div id ="main" class = "no-print">
@@ -39,10 +39,10 @@
         <input type="checkbox" name="showQR" v-model = "showQR" />QR碼
       </div>
       <input class = "block" type="text" name="name" v-model="myName" placeholder="請輸入當事人的稱呼">
-      <input v-show="isBaba" class = "block" type="text" name="babaphone" v-model="babaPhone" placeholder="請輸入爸爸的手機號碼" />
-      <input v-show="isMama" class = "block" type="text" name="babaphone" v-model="mamaPhone" placeholder="請輸入媽媽的手機號碼" />
       <input v-show="isChild" class = "block" type="text" name="childPhone" v-model="childPhone" placeholder="請輸入子女的手機號碼" />
       <input v-show="isCare" class = "block" type="text" name="carePhone" v-model="carePhone" placeholder="請輸入看護的手機號碼" />
+      <input v-show="isMama" class = "block" type="text" name="babaphone" v-model="mamaPhone" placeholder="請輸入媽媽的手機號碼" />
+      <input v-show="isBaba" class = "block" type="text" name="babaphone" v-model="babaPhone" placeholder="請輸入爸爸的手機號碼" />
     </div>
     <a class = "button3" onclick="window.print()">友善列印</a>
   </div>
