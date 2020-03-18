@@ -4,7 +4,31 @@
     <div id ="show" class = "print-only">
       <h1>我走失了</h1>
       <h3>請幫忙聯絡我的主要照顧者</h3>
-      <div>我叫：{{myName}}</div>
+      <div>我叫：{{myName || '[未命名]'}}</div>
+      <div v-show = "isChild">子女手機：
+        <span v-show="showNumber">{{childPhone}}</span>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
+      </div>
+
+      <div v-show="isCare">看顧手機：
+        <span v-show="showNumber">{{carePhone}}</span>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + carePhone + '&choe=UTF-8'"/>
+      </div>
+
+      <div v-show = "isMama">媽媽手機：
+        <span v-show="showNumber">{{mamaPhone}}</span>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + mamaPhone + '&choe=UTF-8'"/>
+      </div>
+
+      <div v-show = "isBaba">爸爸手機：
+        <span v-show="showNumber">{{babaPhone}}</span>
+        <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + babaPhone + '&choe=UTF-8'"/>
+      </div>
+    </div>
+    <div id ="preview" class = "no-print" v-show="preview">
+      <h1>我走失了</h1>
+      <h3>請幫忙聯絡我的主要照顧者</h3>
+      <div>我叫：{{myName || '[未命名]'}}</div>
       <div v-show = "isChild">子女手機：
         <span v-show="showNumber">{{childPhone}}</span>
         <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
@@ -38,7 +62,10 @@
         <input type="checkbox" name="showNumber" v-model = "showNumber"/>手機號碼
         <input type="checkbox" name="showQR" v-model = "showQR" />QR碼
       </div>
-      <input class = "block" type="text" name="name" v-model="myName" placeholder="請輸入當事人的稱呼">
+      <div id = "config2">
+        <input type="checkbox" name="preview" v-model = "preview"/>顯示預覽
+      </div>
+      <input class = "block" type="text" name="name" v-model="myName" autofocus="" v-autofocus placeholder="請輸入當事人的稱呼">
       <input v-show="isChild" class = "block" type="text" name="childPhone" v-model="childPhone" placeholder="請輸入子女的手機號碼" />
       <input v-show="isCare" class = "block" type="text" name="carePhone" v-model="carePhone" placeholder="請輸入看護的手機號碼" />
       <input v-show="isMama" class = "block" type="text" name="babaphone" v-model="mamaPhone" placeholder="請輸入媽媽的手機號碼" />
@@ -56,17 +83,18 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      myName: null,
+      myName: undefined,
       isBaba: false,
       isMama: false,
-      isChild: true,
+      isChild: false,
       isCare: false,
       babaPhone: '',
       mamaPhone: '',
       childPhone: '',
       carePhone: '',
       showNumber: true,
-      showQR: false
+      showQR: false,
+      preview: true
     }
   }
 }
@@ -137,7 +165,7 @@ a.button3:hover {
   background-color:#4095c6;
 }
 
-#show {
+#show, #preview {
   border-radius: 15px;
   border: 3px dotted black;
   width: 62%;
