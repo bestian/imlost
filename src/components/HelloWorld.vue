@@ -170,6 +170,7 @@ a.button3 {
   background-color:#2ea5e1;
   text-align:center;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 a.button3:hover {

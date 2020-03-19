@@ -16,7 +16,8 @@ export default {
                'Microsoft JhengHei',
                 'Microsoft YaHei',
                 'STHeiti',
-                'Apple LiGothic Medium';-webkit-font-smoothing: antialiased;
+                'Apple LiGothic Medium';
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
