@@ -71,7 +71,7 @@
       <input v-show="isMama" class = "block" type="text" name="babaphone" v-model="mamaPhone" placeholder="請輸入媽媽的手機號碼" />
       <input v-show="isBaba" class = "block" type="text" name="babaphone" v-model="babaPhone" placeholder="請輸入爸爸的手機號碼" />
     </div>
-    <a class = "button3" onclick="window.print()">友善列印</a>
+    <a class = "button3" @click="pri(myName)">友善列印</a>
     <footer id="foot" class="no-print">
       <a href="http://www.github.com/bestian/imlost" target="_blank">原始碼 on Github</a>
     </footer>
@@ -95,6 +95,17 @@ export default {
       showNumber: true,
       showQR: false,
       preview: true
+    }
+  },
+  methods: {
+    pri: function (t) {
+      this.$gtag.event('action', {
+        event_category: 'print',
+        event_action: t,
+        event_label: t,
+        value: t
+      })
+      window.print()
     }
   }
 }
