@@ -10,7 +10,7 @@
         <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
       </div>
 
-      <div v-show="isCare">看顧手機：
+      <div v-show="isCare">看護手機：
         <span v-show="showNumber">{{carePhone}}</span>
         <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + carePhone + '&choe=UTF-8'"/>
       </div>
@@ -34,7 +34,7 @@
         <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + childPhone + '&choe=UTF-8'"/>
       </div>
 
-      <div v-show="isCare">看顧手機：
+      <div v-show="isCare">看護手機：
         <span v-show="showNumber">{{carePhone}}</span>
         <img v-show="showQR" :src="'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + carePhone + '&choe=UTF-8'"/>
       </div>
